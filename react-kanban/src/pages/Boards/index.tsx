@@ -7,6 +7,23 @@ import Task from '../../components/Task';
 
 const Boards = () => {
     const [columns, setColumns] = useState<Columns>(Board);
+    const [modalOpen, setModalOpen] = useState(false);
+    const [selectedColumn, setSelectedColumn] = useState("");
+
+    const openModal = (columnId: any) => {
+        setSelectedColumn(columnId);
+        setModalOpen(true);
+    }
+
+    const closeModal = (columnId: any) => {
+        setModalOpen(false);
+    }
+
+    const handleAddTash = (taskData: any) => {
+        const newBoard = { ...columns };
+        newBoard[selectedColumn].items.push(taskData);
+    }
+
     return (
         <>
             <DragDropContext onDragEnd={(result: any) => console.log(result)} >
@@ -22,7 +39,7 @@ const Boards = () => {
                                         </div>
                                         {column.items.map((task: any, index: any) => {
                                             <Draggable key={task.id.toString()} draggableId={task.id.toString()} index={index}>
-                                                {(provided: any) => <><Task /></>}
+                                                {(provided: any) => <><Task provided={provided} task={task} /></>}
                                             </Draggable>
                                         })}
                                         {provided.placeholder}
