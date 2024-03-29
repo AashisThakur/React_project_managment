@@ -11,7 +11,7 @@ const Sidebar = () => {
         { title: "NewsLetter", icon: <NewspaperOutline color="#555" width={"22px"} height={"22px"} />, active: false },
     ];
     return (
-        <div className="fixed left-0 top-0 md:w-[230px] w-[60px] overflow-hidden h-full flex flex-col">
+        <div className="fixed z-10 left-0 top-0 md:w-[230px] w-[60px] overflow-hidden h-full flex flex-col">
             <div className="w-full flex items-center md:justify-start justify-center md:pl-5 h-[70px] bg-white">
                 <span className="text-orange-400 font-semibold text-2x1 md:block hidden">Logo</span>
                 <span className="text-orange-400 font-semibold text-2x1 md:hidden block">L.</span>
