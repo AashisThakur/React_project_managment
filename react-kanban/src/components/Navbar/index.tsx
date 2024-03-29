@@ -10,7 +10,7 @@ const Navbar = () => {
                 </span>
                 <ChevronDown color={"#fb923c"} width={"16px"} height={"16px"} />
             </div>
-            <div className="flex items-center gap-2 md:w-[800px] w-[130px] bg-gray-200 rounded-lg px-3 py-[10px]">
+            <div className="flex items-center gap-2 md:w-[800px] w-[130px] bg-gray-200 rounded-lg px-3 py-[10px] mx-2">
                 <SearchOutline color={"#999"} />
                 <input type="text" placeholder="Search" className="w-full bg-gray-200 outline-none text-[15px]" />
             </div>
