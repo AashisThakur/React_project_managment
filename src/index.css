@@ -19,7 +19,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg");
+  background: rgb(212, 211, 211);
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
