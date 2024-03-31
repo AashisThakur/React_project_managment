@@ -35,7 +35,7 @@ const Boards = () => {
                     {Object.entries(columns).map(([columnId, column]: any) => (
                         <div key={columnId} className='w-full flex flex-col'>
                             <Droppable droppableId={columnId} key={columnId}>
-                                {(provided: any, snapshot) => (
+                                {(provided: any) => (
                                     <div {...provided.droppableProps} ref={provided.innerRef}
                                         className='flex flex-col md:w-[290px] w-[250px] gap-3 items-center py-5'>
                                         <div className='flex items-center justify-center py-[10px] w-full bg-white rounded-lg shadow-sm text-[#555] font-medium text-[15px]'>
