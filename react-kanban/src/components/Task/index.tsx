@@ -8,8 +8,9 @@ interface TaskProps {
 
 const Task = ({ task, provided }: TaskProps) => {
     const { title, description, priority, deadline, image, alt, tags } = task;
+    console.log("Task >>>>>", image)
     return (
-        <div ref={provided.innerRef}{...provided.draggableProps}{...provided.dragJandleProps} className="w-full cursor-grab bg-white flex flex-col justify-between gap-3 items-start shadow-sm rounded-x1 px-3 py-4 ">
+        <div ref={provided.innerRef}{...provided.draggableProps}{...provided.dragHandleProps} className="w-full cursor-grab bg-white flex flex-col justify-between gap-3 items-start shadow-sm rounded-x1 px-3 py-4 ">
             {image && alt && (<img src={image} alt={alt} className="w-full h-[170px] rounded-lg" />)}
             <div className="flex items-center gap-2 ">
                 {tags.map((tags) => (
