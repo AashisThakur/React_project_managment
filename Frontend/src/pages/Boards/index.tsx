@@ -37,9 +37,15 @@ const Boards = () => {
                             <Droppable droppableId={columnId} key={columnId}>
                                 {(provided: any) => (
                                     <div {...provided.droppableProps} ref={provided.innerRef}
-                                        className='flex flex-col md:w-[290px] w-[250px] gap-3 items-center py-5'>
-                                        <div className='flex items-center justify-center py-[10px] w-full bg-white rounded-lg shadow-sm text-[#555] font-medium text-[15px]'>
-                                            {column.name}
+                                        className='flex flex-col md:w-[290px] w-[250px] gap-3 items-center py-5 position-sticky'>
+                                        <div className='flex flex-row md:w-full'>
+                                            <div className='flex items-center justify-center py-[10px] w-full bg-white rounded-lg shadow-sm text-[#555] font-medium text-[15px] mx-2'>
+                                                {column.name}
+
+                                            </div>
+                                            <div onClick={() => openModal(columnId)} className='flex cursor-pointer items-center justify-center gap-1 py-[10px] px-[10px] bg-white rounded-lg shadow-sm text-[#555] font-medium text-[15px]'>
+                                                <AddOutline color={"#555"} />
+                                            </div>
                                         </div>
                                         {column.items.map((task: any, index: any) => (
                                             <Draggable key={task.id.toString()} draggableId={task.id} index={index}>
@@ -51,10 +57,7 @@ const Boards = () => {
                                     </div>
                                 )}
                             </Droppable>
-                            <div onClick={() => openModal(columnId)} className='flex cursor-pointer items-center justify-center gap-1 py-[10px] md:w-[90%] w-full bg-white rounded-lg shadow-sm text-[#555] font-medium text-[15px]'>
-                                <AddOutline color={"#555"} />
-                                Add Task
-                            </div>
+
                         </div>
                     ))}
                 </div>
